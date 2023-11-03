@@ -6,7 +6,7 @@ export default {
   data() {
     return {
       projects: [],
-      api: { baseUrl: "http://127.0.0.1:8000/api/projects" },
+      api: { baseUrl: "http://127.0.0.1:8000/api/" },
     };
   },
 
@@ -14,6 +14,7 @@ export default {
   methods: {
     fetchPosts(uri = this.api.baseUrl + "projects") {
       axios.get(uri).then((response) => {
+        console.log(response.data.data);
         this.projects = response.data.data;
       });
     },

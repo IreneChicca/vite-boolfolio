@@ -16,10 +16,10 @@ export default {
   <h1>{{ title }}</h1>
 
   <div class="container">
-    <div class="row row-cols-3">
-      <div class="col">
-        <div class="card">
-          <h5>title</h5>
+    <div class="row row-cols-3 g-3">
+      <div class="col" v-for="project in projects">
+        <div class="card p-3">
+          <h5>{{ project.title }}</h5>
         </div>
       </div>
     </div>
