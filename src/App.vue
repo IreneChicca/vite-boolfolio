@@ -5,6 +5,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      title: "Projects",
       projects: [],
       api: { baseUrl: "http://127.0.0.1:8000/api/" },
     };
@@ -12,7 +13,7 @@ export default {
 
   components: { ProjectList },
   methods: {
-    fetchPosts(uri = this.api.baseUrl + "projects") {
+    fetchProjects(uri = this.api.baseUrl + "projects") {
       axios.get(uri).then((response) => {
         console.log(response.data.data);
         this.projects = response.data.data;
@@ -20,14 +21,15 @@ export default {
     },
   },
   created() {
-    this.fetchPosts();
+    this.fetchProjects();
   },
 };
 </script>
 
 <template>
-  <h1>homepage</h1>
-
+  <div class="text-center my-5">
+    <h1>{{ title }}</h1>
+  </div>
   <ProjectList :projects="projects" />
 </template>
 
