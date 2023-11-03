@@ -13,8 +13,22 @@ export default {
 </script>
 
 <template>
-  <div class="card p-4 m-3 text-center">
-    <h5>{{ project.title }}</h5>
+  <div class="card m-3 text-center">
+    <div class="card-header">
+      <span class="badge" :style="{ backgroundColor: project.type.color }">{{
+        project.type.label
+      }}</span>
+    </div>
+    <div class="card-body">
+      <h5>{{ project.title }}</h5>
+      <span
+        class="badge mx-1"
+        v-for="technology in project.technologies"
+        :style="{ backgroundColor: technology.color }"
+      >
+        {{ technology.label }}
+      </span>
+    </div>
   </div>
 </template>
 
