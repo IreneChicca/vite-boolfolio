@@ -38,23 +38,28 @@ export default {
   <h1>{{ title }}</h1>
 
   <div class="container">
-    <div class="row row-cols-5 g-3">
-      <ProjectCard v-for="project in projects" :project="project" />
+    <div class="row row-cols-5 g-3 my-5">
+      <ProjectCard
+        v-for="project in projects"
+        :isDetail="false"
+        :project="project"
+      />
     </div>
 
-    <nav aria-label="page navigation mt-3">
-      <ul class="pagination">
-        <li
-          class="page-item"
-          v-for="link in pagination.links"
-          @click="fetchProjects(link.url)"
-        >
-          <a class="page-link" href="#" v-html="link.label"></a>
-        </li>
-      </ul>
-    </nav>
-
-    <div>
+    <div class="m-auto">
+      <nav aria-label="page navigation mt-3">
+        <ul class="pagination">
+          <li
+            class="page-item"
+            v-for="link in pagination.links"
+            @click="fetchProjects(link.url)"
+          >
+            <a class="page-link" href="#" v-html="link.label"></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- <div>
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li
@@ -66,7 +71,7 @@ export default {
           </li>
         </ul>
       </nav>
-    </div>
+    </div> -->
   </div>
 </template>
 

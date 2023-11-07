@@ -35,12 +35,6 @@ export default {
             :to="{ name: 'portfolio' }"
             >Portfolio</router-link
           >
-          <router-link
-            class="nav-link"
-            aria-current="page"
-            :to="{ name: 'details', params: { id: project.id } }"
-            >Home</router-link
-          >
         </div>
       </div>
     </div>

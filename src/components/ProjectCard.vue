@@ -8,6 +8,7 @@ export default {
 
   props: {
     project: Object,
+    isDetail: Boolean,
   },
 };
 </script>
@@ -28,6 +29,14 @@ export default {
       >
         {{ technology.label }}
       </span>
+
+      <div>
+        <router-link
+          :to="{ name: 'details', params: { id: project.id } }"
+          class="btn btn-outline-secondary my-3"
+          >Dettagli</router-link
+        >
+      </div>
     </div>
   </div>
 </template>
