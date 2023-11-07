@@ -30,6 +30,7 @@ export default {
   <div class="text-center my-5">
     <h1>{{ title }}</h1>
   </div>
+  <router-view></router-view>
   <ProjectList :projects="projects" />
 </template>
 
