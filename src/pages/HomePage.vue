@@ -7,5 +7,9 @@ export default {
   },
 };
 </script>
-<template>{{ title }}</template>
+<template>
+  <div class="text-center my-5">
+    <h1>{{ title }}</h1>
+  </div>
+</template>
 <style lang="scss" scoped></style>

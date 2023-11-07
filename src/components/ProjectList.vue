@@ -26,8 +26,8 @@ export default {
       });
     },
   },
-  props: {
-    projects: Array,
+  created() {
+    this.fetchProjects();
   },
 
   components: { ProjectCard },
