@@ -2,6 +2,8 @@
 import ProjectList from "./components/ProjectList.vue";
 import axios from "axios";
 
+import Navbar from "./components/ui/Navbar.vue";
+
 export default {
   data() {
     return {
@@ -11,7 +13,7 @@ export default {
     };
   },
 
-  components: { ProjectList },
+  components: { ProjectList, Navbar, Navbar },
   methods: {
     fetchProjects(uri = this.api.baseUrl + "projects") {
       axios.get(uri).then((response) => {
@@ -29,8 +31,9 @@ export default {
 <template>
   <div class="text-center my-5">
     <h1>{{ title }}</h1>
+    <Navbar />
   </div>
-  <router-view></router-view>
+  <!-- <router-view></router-view> -->
   <ProjectList :projects="projects" />
 </template>
 
